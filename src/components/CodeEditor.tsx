@@ -21,10 +21,10 @@ type CodeEditorProps = {
   onChange: (value: string) => void;
   theme: 'light' | 'dark';
   language: Language;
-  code: string;
+ 
 };
 
-const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, theme, language, code }) => {
+const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, theme, language }) => {
   const editorRef = useRef<HTMLDivElement>(null);
 
 

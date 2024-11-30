@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect, useState, createContext, useContext } from 'react';
+import { ReactNode, useEffect, useState, createContext } from 'react';
 import '../app/globals.css';
 import ThemeToggle from '@/components/ThemeToggle';
 
