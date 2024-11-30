@@ -2,20 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  font-size: 16px;
+  color-scheme: light dark;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden;
 }
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.dark {
+  background-color: #1d2030;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+
+:root {
+  --background-color-light: white;
+  --background-color-dark: #1d2030;
+  --text-color-light: black;
+  --text-color-dark: white;
+}
+
+html {
+  font-size: 16px;
+  color-scheme: light dark;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+html.dark {
+  --background-color: var(--background-color-dark);
+  --text-color: var(--text-color-dark);
+}
+
+html.light {
+  --background-color: var(--background-color-light);
+  --text-color: var(--text-color-light);
+}
+
+/* Transition themes */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.cm-gutter,
+.cm-lineNumbers,
+.cm-activeLineGutter {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
